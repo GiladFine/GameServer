@@ -4,6 +4,8 @@ VALUES = [1, 2, 3, 4, 5, 6, 7 ,8, 9, 10, 11, 12, 13] #Ace = 1
 
 SHAPES = ["Harts", "Diamonds", "Clubs", "Spades", "Joker"]
 
+SHAPES_SHORTCUTS = ["H", "D", "C", "S", "J"] 
+
 VALUES_NAMES = ['A', '2', '3', '4', '5', '6', '7' , '8', '9', '10', 'J', 'Q', 'K']
 class Card(object):
 
