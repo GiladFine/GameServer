@@ -1,15 +1,38 @@
+import game_flask_server
+
 
 class Game(object):
 
     def __init__(self, players_list, deck, middle, first_player):
+        game_flask_server.app_ip_to_player.update({p.app_ip:p for p in players_list})
+        game_flask_server.game = self
         self.players = players_list
         self.deck = deck
         self.middle = middle # Where everybody tosses their cards
         self.active_player_index = first_player # Index of the player that's playing now
         self.active_player = self.players[self.active_player_index]
         self.turn_counter = 0
+        self.start = game_flask_server.run_server
 
     def end_rule(self):
+        raise NotImplementedError
+
+    def button1_handler():
+        raise NotImplementedError
+
+    def button2_handler():
+        raise NotImplementedError
+
+    def button3_handler():
+        raise NotImplementedError
+
+    def button4_handler():
+        raise NotImplementedError
+
+    def get_button_names():
+        raise NotImplementedError
+
+    def is_need_to_update_hand():
         raise NotImplementedError
 
     def run_game(self):
@@ -129,9 +152,3 @@ class Game(object):
                 return self.players.index(player)
 
         raise ValueError("Error, Card was not found")
-
-
-
-
-
-

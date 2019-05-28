@@ -1,7 +1,7 @@
 
 class Player(object):
 
-    def __init__(self, name, cards_list):
+    def __init__(self, name, cards_list, app_ip, esp_ip):
         self.name = name
         self.hand = cards_list
         self.current_card_index = 0

@@ -16,7 +16,7 @@ def start_socket(port):
     return s
 
 def bootstrap(number_of_players):
-    esp_interface = Interface.EspInterface('C:\Users\idoas\Documents\Projects\E-card\card_data\\')
+    esp_interface = Interface.EspInterface('C:\\Users\\idoas\\Documents\\Projects\\E-card\\card_data\\JSON')
     app_to_esp = dict()
     connection_to_client = dict()
     rand_card_to_esp = dict()
@@ -51,6 +51,11 @@ def bootstrap(number_of_players):
                     s.send("Ok")
                     inputs.remove(s)
                     s.close()
-                    rand_card_to_esp[data].close()                   
+                    rand_card_to_esp[data].close()
+                    if len(app_to_esp) == number_of_players:
+                        break
                 else:
                     s.send("Bad")
+        if len(app_to_esp) == number_of_players:
+            break
+    return app_to_esp
