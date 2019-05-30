@@ -3,6 +3,7 @@ import Interface
 import random
 import socket
 import threading
+import time
 
 
 HOST = '127.0.0.1'
@@ -58,4 +59,8 @@ def bootstrap(number_of_players):
                     s.send("Bad")
         if len(app_to_esp) == number_of_players:
             break
+    time.sleep(10)
+    for app_ip in app_to_esp:
+        thread = threading.Thread(target=Interface.EspInterface.send_card, args="(esp_interface, connection_to_client[s], 'RED_Back',)")
+        thread.start()
     return app_to_esp

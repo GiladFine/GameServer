@@ -4,6 +4,8 @@ class Player(object):
     def __init__(self, name, cards_list, app_ip, esp_ip):
         self.name = name
         self.hand = cards_list
+        self.app_ip = app_ip
+        self.esp_ip = esp_ip
         self.current_card_index = 0
         self.score = 0
         self.isActive = True

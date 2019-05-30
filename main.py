@@ -1,25 +1,22 @@
-from PresidentGame import *
+from WarGame import *
 from game_bootstrap import bootstrap
 
 def main():
-    app_to_esp_ips_map = bootstrap(4)
+    #app_to_esp_ips_map = bootstrap(4)
     players = [
                 Player("Gilad",
                        [],
-                       app_to_esp_ips_map.keys()[0],
-                       app_to_esp_ips_map[app_to_esp_ips_map.keys()[0]]),
-                Player("Asher", [],
-                        app_to_esp_ips_map.keys()[1],
-                        app_to_esp_ips_map[app_to_esp_ips_map.keys()[1]]),
-                Player("Meged", [],
-                        app_to_esp_ips_map.keys()[2],
-                        app_to_esp_ips_map[app_to_esp_ips_map.keys()[2]]),
-                Player("Ofir", [],
-                        app_to_esp_ips_map.keys()[3],  
-                        app_to_esp_ips_map[app_to_esp_ips_map.keys()[3]])
+                       "192.168.43.1",#"172.16.2.86",
+                       "192.168.43.166"#"172.16.2.15",
+                       ),
+                Player("Asher",
+                        [],
+                        "192.168.43.122",#"172.16.2.109",
+                        "192.168.43.172"#"172.16.2.90",
+                        )
                 ]
 
-    president = PresidentGame(players)
+    president = WarGame(players)
 
     print("STUFF")
 
